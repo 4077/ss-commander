@@ -1,0 +1,150 @@
+// head {
+@import "../../../../../-/less/common.less";
+
+@__nodeId__: ~"ss_commander_ui_panel__main_topBar_treeSelector";
+// }
+
+.@{__nodeId__} {
+    position: relative;
+
+    > .name {
+        cursor: pointer;
+        float: left;
+        padding: 5px 8px;
+        margin: 4px;
+        background: linear-gradient(#F9F9F9, #E4E4E4);
+        border: 1px solid #B5B5B5;
+        border-radius: 3px;
+        color: #404040;
+        text-align: center;
+        white-space: nowrap;
+
+        .icon {
+            margin-left: 3px;
+            font-size: 14px;
+            line-height: 13px;
+            opacity: 0.5;
+        }
+
+        &:hover {
+            background: linear-gradient(#F9F9F9, #F9F9F9);
+            border-color: #C5C5C5;
+
+            .icon {
+                opacity: 0.8;
+            }
+        }
+
+        &:active {
+            position: relative;
+            left: 1px;
+            top: 1px;
+        }
+    }
+
+    > .dropdown {
+        display: none;
+        position: absolute;
+        margin-top: 35px;
+        left: 4px;
+        z-index: 15000;
+
+        box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+
+        background: linear-gradient(#F9F9F9, #F9F9F9);
+        border: 1px solid #B5B5B5;
+        border-radius: 3px;
+    }
+
+    &.focus {
+
+        > .name {
+            background: linear-gradient(#464646, #2D2D2D);
+            border: 1px solid #333333;
+            color: #B1B1B1;
+
+            &:hover {
+                background: linear-gradient(#2D2D2D, #2D2D2D);
+                border-color: #292929;
+            }
+        }
+    }
+
+    &.source {
+
+        > .name {
+            background: linear-gradient(#5BA7D9, #559AC8);
+            border: 1px solid #559AC8;
+            color: #FFFFFF;
+
+            &:hover {
+                background: linear-gradient(#4E81AD, #4E81AD);
+                border-color: #44789E;
+
+                .icon {
+                    opacity: 0.8;
+                }
+            }
+        }
+    }
+
+    &.target {
+
+        > .name {
+            background: linear-gradient(#FC4D34, #D8422D);
+            border: 1px solid #D8422D;
+            color: #FFFFFF;
+
+            &:hover {
+                background: linear-gradient(#D2402C, #D2402C);
+                border-color: #D8422D;
+
+                .icon {
+                    opacity: 0.8;
+                }
+            }
+        }
+    }
+
+    &.split {
+
+        > .name {
+            background: linear-gradient(#6ebc5f, #62a855);
+            border: 1px solid #62a855;
+            color: #FFFFFF;
+
+            &:hover {
+                background: linear-gradient(#5FA252, #5FA252);
+                border-color: #5A9A4E;
+
+                .icon {
+                    opacity: 0.8;
+                }
+            }
+        }
+    }
+
+    &.focus {
+
+        &.source {
+
+            > .name {
+                border-color: #183A5D;
+            }
+        }
+
+        &.target {
+
+            > .name {
+                border-color: #632a21;
+            }
+        }
+
+        &.split {
+
+            > .name {
+                border-color: #2A4924;
+            }
+        }
+    }
+}

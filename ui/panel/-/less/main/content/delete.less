@@ -1,0 +1,45 @@
+// head {
+@import "../../../../../-/less/common.less";
+@import "../../../../../../../../css/std/-/less/main.less";
+
+@__nodeId__: ~"ss_commander2_ui_panel__main_content_delete";
+// }
+
+.@{__nodeId__} {
+
+    .section {
+        margin: 10px 0;
+        background-color: #F5F5F5;
+        border-radius: 5px;
+        padding: 10px;
+        border: 1px solid #E4E4E4;
+        overflow: hidden;
+
+        &:first-child {
+            margin-top: 0;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        .buttons {
+            margin-top: 13px;
+
+            display: flex;
+            justify-content: center;
+
+            .button {
+                .__button;
+
+                &.delete {
+                    .red;
+                }
+
+                &.cancel {
+                    .blue;
+                }
+            }
+        }
+    }
+}

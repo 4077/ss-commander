@@ -1,0 +1,62 @@
+// head {
+@import "../../../-/less/common.less";
+
+@__nodeId__: ~"ss_commander_ui_panel__main";
+// }
+
+.@{__nodeId__} {
+    .h100;
+
+    .main_panel {
+        .h100;
+
+        .top {
+            position: relative;
+            //z-index: 2;
+        }
+
+        > .content {
+            .h100;
+
+            position: relative;
+
+            &.highlight {
+
+                &.target {
+
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-color: rgba(222, 15, 50, 0.45);
+                    }
+                }
+
+                &.source {
+
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-color: rgba(40, 105, 161, 0.45);
+                    }
+                }
+            }
+        }
+
+        .bottom {
+            position: relative;
+            //z-index: 2;
+        }
+    }
+
+    .plugins_panel {
+
+    }
+}

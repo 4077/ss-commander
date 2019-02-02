@@ -1,0 +1,59 @@
+.@{__nodeId__} {
+
+    .folder {
+
+        .prediction {
+
+            .row {
+                margin: 2px 0;
+                display: flex;
+                flex-wrap: nowrap;
+                align-items: center;
+
+                .indent {
+                    flex-shrink: 0;
+                }
+
+                .icon {
+                    font-size: 14px;
+                    margin-right: 5px;
+                    color: #F1B457;
+                }
+
+                .name {
+                    margin-right: 5px;
+                    font-weight: bold;
+                    white-space: nowrap;
+                }
+
+                .info {
+                    padding: 0 3px;
+                    border-radius: 3px;
+                    white-space: nowrap;
+                }
+
+                .reason {
+                    color: #909090;
+                    font-style: italic;
+                    margin-left: 5px;
+                    font-size: 11px;
+                    white-space: nowrap;
+                }
+
+                &.deleting {
+
+                    .info {
+                        color: #FF0000;
+                    }
+                }
+
+                &.not_deleting {
+
+                    .info {
+                        color: #008800;
+                    }
+                }
+            }
+        }
+    }
+}

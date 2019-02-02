@@ -1,0 +1,226 @@
+// head {
+@import "../../../../-/less/common.less";
+
+@__nodeId__: ~"ss_commander_ui_panel__main_topBar";
+// }
+
+.@{__nodeId__} {
+    position: relative;
+
+    .main {
+        background: linear-gradient(#F5F5F5, #E5E5E5);
+        border-bottom: 1px solid #C0C0C0;
+
+        > .nav {
+            display: flex;
+
+            > .root_indicator {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .icon {
+                    margin: 0 0 0 8px;
+                    color: #A0A0A0;
+                    font-size: 14px;
+                }
+
+                &.focus {
+
+                    .icon {
+                        color: #FF7800;
+                    }
+                }
+            }
+
+            > .tree_selector {
+                margin-right: 5px;
+            }
+
+            > .branch {
+                padding: 0;
+
+                display: flex;
+                align-items: center;
+                flex-wrap: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+
+                .node {
+                    display: flex;
+                    padding: 11px 10px 9px;
+
+                    .icon {
+                        margin-right: 8px;
+                        margin-left: -8px;
+                        font-size: 8px;
+                        padding: 3px 0 0;
+                        color: #A0A0A0;
+                    }
+
+                    .name {
+                        white-space: nowrap;
+                    }
+
+                    &:first-child {
+
+                        .icon {
+                            display: none;
+                        }
+                    }
+
+                    &:last-child {
+
+                        .name {
+                            font-weight: bold;
+                        }
+                    }
+
+                    &:hover {
+                        cursor: pointer;
+
+                        .name {
+                            text-decoration: underline;
+                        }
+
+                        &:last-child {
+                            cursor: default;
+
+                            .name {
+                                text-decoration: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        > .buttons {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 4px 5px;
+            display: flex;
+            background: linear-gradient(#F5F5F5, #E5E5E5);
+
+            .force_button {
+                margin: 0 1px;
+                cursor: pointer;
+                border-radius: 4px;
+                width: 26px;
+                height: 25px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .icon {
+                    transform: rotate(-45deg);
+                    color: #808080;
+                    font-size: 14px;
+                }
+
+                &:hover {
+                    background-color: rgba(127, 127, 127, 0.2);
+                }
+
+                &.pressed {
+
+                    &.collapse {
+
+                        .icon {
+                            color: #E24656;
+                        }
+                    }
+
+                    &.expand {
+
+                        .icon {
+                            color: #24C32E;
+                        }
+                    }
+                }
+            }
+
+            .ordering_toggle_button {
+                cursor: pointer;
+                //padding: 6px;
+                border-radius: 4px;
+                height: 25px;
+                margin-left: 3px;
+                width: 26px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .icon {
+                    color: #808080;
+                }
+
+                &.name {
+
+                    .icon {
+                        color: #22ACFF;
+                    }
+                }
+
+                &:hover {
+                    background-color: rgba(127, 127, 127, 0.2);
+                }
+            }
+        }
+
+        &.focus {
+            background: linear-gradient(#424242, #404040);
+            border-bottom: 1px solid #1F1F1F;
+
+            > .nav {
+
+                > .root_indicator {
+
+                    &.focus {
+
+                        .icon {
+                            color: #FFFB65;
+                        }
+                    }
+                }
+
+                > .branch {
+
+                    .name {
+                        color: #D6D6D6;
+                    }
+                }
+            }
+
+            > .buttons {
+                background: linear-gradient(#424242, #404040);
+            }
+        }
+    }
+
+    .filters {
+        background: linear-gradient(#F5F5F5, #E5E5E5);
+        border-bottom: 1px solid #C0C0C0;
+        padding: 3px;
+
+        select {
+            padding: 3px;
+            border-radius: 3px;
+            border: 1px solid #D0D0D0;
+        }
+
+        &.focus {
+            background: linear-gradient(#424242, #404040);
+            border-bottom: 1px solid #1F1F1F;
+
+            select {
+                padding: 3px;
+                border-radius: 3px;
+                border: 1px solid #2F2F2F;
+                background-color: #313131;
+                color: #DEDEDE;
+            }
+        }
+    }
+}

@@ -1,0 +1,93 @@
+// head {
+@import "../../../../../../../../-/less/common.less";
+@import "../../../../../../../../../../../../modules-vendor/fed/jquery/ui/-/less/icons.less";
+
+@__nodeId__: ~"ss_commander2_ui_panel__main_bottomBar_createPanel_treeSelector_dropdown_node";
+// }
+
+.@{__nodeId__} {
+    cursor: pointer;
+    padding: 7px 5px;
+
+    display: flex;
+    align-items: center;
+
+    .mode_icon {
+        font-size: 14px;
+        margin-right: 5px;
+
+        &.fa-folder {
+            color: #F1B457;
+        }
+
+        &.fa-file {
+            color: #5BADDE;
+        }
+    }
+
+    .name {
+        white-space: nowrap;
+        color: #303030;
+        border-radius: 2px;
+        padding: 0 3px;
+    }
+
+    &.not_compatible {
+        cursor: default;
+
+        .name {
+            color: #DADADA;
+        }
+
+        .mode_icon {
+            color: #e8e8e8;
+        }
+    }
+
+    //&.source {
+    //
+    //    .name {
+    //        background-color: #FFFFFF;
+    //        color: #00AEE4;
+    //    }
+    //}
+    //
+    //&.target {
+    //
+    //    .name {
+    //        background-color: #FFFFFF;
+    //        color: #FF0000;
+    //    }
+    //}
+    //
+    //&.split {
+    //
+    //    .name {
+    //        background-color: #FFFFFF;
+    //        color: #12A000;
+    //    }
+    //}
+    //
+    //&.not_connected {
+    //
+    //    .mode_icon {
+    //
+    //    }
+    //
+    //    .name {
+    //        color: #909090;
+    //    }
+    //}
+
+    &:hover {
+
+        &.compatible {
+            background-color: #E0E0E0;
+        }
+    }
+
+    &.selected {
+        cursor: default;
+        background-color: #F1EED1;
+    }
+}

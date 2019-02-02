@@ -1,0 +1,18 @@
+// head {
+@import "../../../../-/less/common.less";
+
+@__nodeId__: ~"ss_commander_ui_panel__main_plugins";
+// }
+
+.@{__nodeId__} {
+    display: none;
+    height: 200px;
+
+    top: auto !important;
+    bottom: 0 !important;
+
+    &.enabled {
+        display: flex;
+        flex-direction: column;
+    }
+}

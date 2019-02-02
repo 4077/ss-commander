@@ -1,0 +1,112 @@
+// head {
+@import "../../../../../../-/less/common.less";
+
+@__nodeId__: ~"ss_commander_ui_panel__main_content_pages_container";
+// }
+
+.@{__nodeId__} {
+    width: 100%;
+    border-collapse: collapse;
+
+    tr:first-child td {
+        border-top: 0;
+    }
+
+    tr.container.row {
+        cursor: pointer;
+    }
+
+    td.bar {
+
+        .wrapper {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .name {
+
+        }
+
+        .products_count {
+            cursor: pointer;
+            color: #606060;
+            display: flex;
+
+            .value {
+                padding: 3px 5px;
+            }
+
+            .icon {
+                padding: 3px 0;
+                font-size: 14px;
+            }
+
+            &:hover {
+                color: #303030;
+            }
+        }
+    }
+
+    table.products,
+    table.pages {
+        width: 100%;
+        border-collapse: collapse;
+
+        tr td:last-child {
+            border-right: 0;
+        }
+
+        tr:last-child td {
+            border-bottom: 0;
+        }
+    }
+
+    &.collapsed {
+
+        tr.content {
+            display: none;
+        }
+    }
+
+    &.force_collapse {
+
+        tr.content {
+            display: none;
+        }
+
+        &.not_collapsed {
+
+            td.bar {
+
+                .products_count {
+                    color: #B70008;
+                }
+            }
+        }
+    }
+
+    &.force_expand {
+
+        tr.content {
+            display: table-row;
+        }
+
+        &.collapsed {
+
+            tr.content {
+                display: table-row;
+            }
+        }
+    }
+
+    &.temporary_expand {
+
+        tr.content {
+            display: table-row !important;
+        }
+    }
+
+    td.indent {
+        width: 20px;
+    }
+}

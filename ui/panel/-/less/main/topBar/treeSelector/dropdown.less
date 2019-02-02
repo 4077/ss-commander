@@ -1,0 +1,82 @@
+// head {
+@import "../../../../../../-/less/common.less";
+
+@__nodeId__: ~"ss_commander_ui_panel__main_topBar_treeSelector_dropdown";
+// }
+
+.@{__nodeId__} {
+
+    .tree {
+
+        .button {
+            cursor: pointer;
+            padding: 10px;
+
+            display: flex;
+            align-items: center;
+
+            .label {
+                white-space: nowrap;
+
+                .branch {
+                    color: #606060;
+                    border-radius: 2px;
+                    padding: 0 3px;
+                }
+            }
+
+            .icon {
+                margin-right: 5px;
+                color: #909090;
+                font-size: 14px;
+            }
+
+            &.source {
+
+                .branch {
+                    background-color: #FFFFFF;
+                    color: #00AEE4;
+                }
+            }
+
+            &.target {
+
+                .branch {
+                    background-color: #FFFFFF;
+                    color: #FF0000;
+                }
+            }
+
+            &.split {
+
+                .branch {
+                    background-color: #FFFFFF;
+                    color: #12A000;
+                }
+            }
+
+            &.folders {
+
+                .icon {
+                    color: #F1B457;
+                }
+            }
+
+            &.pages {
+
+                .icon {
+                    color: #5BADDE;
+                }
+            }
+
+            &:hover {
+                background-color: #E0E0E0;
+            }
+
+            &.selected {
+                cursor: default;
+                background-color: #F1EED1;
+            }
+        }
+    }
+}

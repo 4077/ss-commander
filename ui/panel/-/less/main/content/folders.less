@@ -1,0 +1,448 @@
+// head {
+@import "../../../../../-/less/common.less";
+@import "../../../../../../../css/std/-/less/main.less";
+
+@__nodeId__: ~"ss_commander_ui_panel__main_content_folders";
+// }
+
+.@{__nodeId__} {
+    position: relative;
+
+    flex-grow: 1;
+    overflow: auto;
+
+    background-color: #F5F5F5;
+
+    > table {
+        width: 100%;
+        border-collapse: collapse;
+
+        td {
+            border: 1px solid #B9B9B9;
+        }
+
+        tr:first-child td {
+            border-top: 0;
+        }
+
+        table tr td:first-child {
+            border-left: 0;
+        }
+
+        tr > td > table {
+            width: 100%;
+            border-collapse: collapse;
+
+            tr:last-child td {
+                border-bottom: 0;
+            }
+
+            tr td:last-child {
+                border-right: 0;
+            }
+        }
+    }
+
+    //
+    // contents
+    //
+
+    .row {
+        cursor: default;
+
+        .icon {
+            width: 20px;
+            text-align: center;
+
+            div {
+                padding: 3px;
+                font-size: 14px;
+            }
+        }
+
+        .locked_icon {
+            display: none;
+            margin-left: 5px;
+            color: #CCC;
+        }
+
+        &.locked {
+
+            .locked_icon {
+                display: inline;
+            }
+        }
+
+        .name, .stock, .price {
+            padding: 3px 5px;
+        }
+
+        .stock, .price {
+            text-align: right;
+            white-space: nowrap;
+        }
+
+        .price {
+            white-space: nowrap;
+        }
+
+        &.page {
+
+            .icon > div {
+                color: #5BADDE;
+            }
+
+            .name {
+                color: #303030;
+            }
+        }
+
+        &.container {
+
+            .icon > div {
+                color: #327FAD;
+            }
+
+            .name {
+                color: #2F2F2F;
+            }
+        }
+
+        &.folder {
+
+            .icon > div {
+                color: #F1B457;
+            }
+
+            .name {
+                color: #2F2F2F;
+                font-weight: bold;
+            }
+        }
+
+        &.product {
+
+            .icon {
+
+                > div {
+                    color: #C6C6C6;
+                }
+
+                &.status {
+
+                    &.moderation > div {
+                        color: #0092FD;
+                    }
+
+                    &.temporary > div {
+                        color: #FF0097;
+
+                    }
+
+                    &.discarded > div {
+                        color: #FF0000;
+
+                    }
+
+                    &.scheduled > div {
+                        color: #22B100;
+                    }
+                }
+
+                &.has_image {
+
+                    div {
+                        display: none;
+                    }
+
+                    &.has {
+
+                        div {
+                            display: block;
+                        }
+                    }
+
+                    div {
+                        color: #ABABAB;
+                    }
+                }
+            }
+
+            .name {
+                color: #303030;
+            }
+        }
+    }
+
+    //
+    // backgrounds
+    //
+
+    //.selected() {
+    //    background-color: #298ADA !important;
+    //    color: #FFFFFF;
+    //
+    //    .icon > div {
+    //        color: #FFFFFF !important;
+    //    }
+    //
+    //    .name, .stock, .price {
+    //        color: #FFFFFF;
+    //    }
+    //
+    //    &.not_published {
+    //        background-color: #298ADA;
+    //        color: #FFFFFF;
+    //    }
+    //
+    //    &.disabled {
+    //        background-color: #298ADA;
+    //        color: #FFFFFF;
+    //    }
+    //
+    //    &.focus {
+    //
+    //        .icon > div {
+    //            color: #FFFF00 !important;
+    //        }
+    //
+    //        .name, .stock, .price {
+    //            color: #FFFF00;
+    //        }
+    //    }
+    //}
+    //
+    //.prepared() {
+    //    background-color: #940032;
+    //    color: #FFFFFF;
+    //
+    //    .icon > div {
+    //        color: #FFFFFF !important;
+    //    }
+    //
+    //    .name, .stock, .price {
+    //        color: #FFFFFF;
+    //    }
+    //
+    //    &.not_published {
+    //        background-color: #940032;
+    //        color: #FFFFFF;
+    //    }
+    //
+    //    &.disabled {
+    //        background-color: #940032;
+    //        color: #FFFFFF;
+    //    }
+    //
+    //    &.focus {
+    //
+    //        .icon > div {
+    //            color: #FFFF00 !important;
+    //        }
+    //
+    //        .name, .stock, .price {
+    //            color: #FFFF00;
+    //        }
+    //    }
+    //}
+
+    .selected() {
+        //background-color: #298ADA;
+        background-color: #2E0063;
+        color: #FFFFFF;
+
+        .icon > div {
+            color: #FFFFFF !important;
+        }
+
+        .name, .stock, .price {
+            color: #FFFFFF;
+        }
+
+        &.not_published {
+            background-color: #2E0063;
+            color: #FFFFFF;
+        }
+
+        &.disabled {
+            background-color: #2E0063;
+            color: #FFFFFF;
+        }
+
+        &.focus {
+
+            .icon > div {
+                color: #FFFF00 !important;
+            }
+
+            .name, .stock, .price {
+                color: #FFFF00;
+            }
+        }
+    }
+
+    .prepared() {
+        color: #FF0000;
+        text-shadow: 1px 1px 1px rgba(130, 130, 130, 0.25);
+
+        .icon > div {
+            //color: #FF0000 !important;
+        }
+
+        .name, .stock, .price {
+            color: #FF0000;
+        }
+
+        &.not_published {
+            //background-color: #940032;
+            //color: #FFFFFF;
+            color: #FF0000;
+        }
+
+        &.disabled {
+            //background-color: #940032;
+            //color: #FFFFFF;
+            color: #FF0000;
+        }
+
+        &.focus {
+
+            .icon > div {
+                //color: #FFFF00 !important;
+            }
+
+            .name, .stock, .price {
+                //color: #FFFF00;
+            }
+        }
+    }
+
+    .row {
+        background-color: #DBDBDB;
+
+        &:hover {
+
+            td {
+                background-color: rgba(127, 127, 127, 0.2);
+            }
+        }
+
+        &.not_published {
+            background-color: #E0C8C2;
+        }
+
+        &.disabled {
+            background-color: #CACACA;
+        }
+
+        &.installed {
+
+            .name {
+                color: #00BD19;
+            }
+
+            .icon {
+
+                &.has_image {
+
+                    div {
+                        color: #269E36;
+                    }
+                }
+            }
+        }
+
+        &.focus {
+            background-color: #F1EECC;
+
+            &.not_published {
+                background-color: #EFC6A7;
+            }
+
+            &.disabled {
+                background-color: #ECECEC;
+            }
+
+            &.installed {
+                background-color: #CDF1D0;
+            }
+
+            &.selected {
+                background-color: #2E0063;
+
+                &.installed {
+                    background-color: #2E0063;
+                }
+            }
+        }
+
+        &.selected {
+            .selected;
+        }
+
+        &.prepared {
+            .prepared;
+        }
+    }
+
+    &.focus {
+        background-color: #FFFFFF;
+
+        .row {
+            background-color: #FFFFFF;
+
+            &.not_published {
+                background-color: #FFD5C9;
+            }
+
+            &.disabled {
+                background-color: #E0E0E0;
+            }
+
+            &.focus {
+                background-color: #FDF8C1;
+
+                &.not_published {
+                    background-color: #FFBBA8;
+                }
+
+                &.disabled {
+                    background-color: #CACACA;
+                }
+            }
+
+            &.selected {
+                .selected;
+            }
+
+            &.prepared {
+                .prepared;
+            }
+        }
+    }
+
+    .row.highlight,
+    .row.focus.highlight,
+    .row.selected.highlight,
+    .row.prepared.highlight,
+    .row.focus.selected.highlight,
+    .row.focus.prepared.highlight {
+        color: #FFFFFF;
+
+        .icon > div {
+            color: #FFFFFF !important;
+        }
+
+        .name, .stock, .price {
+            color: #FFFFFF;
+        }
+
+        &.target {
+            background: #630036;
+        }
+
+        &.source {
+            background: #00558C;
+        }
+    }
+}
