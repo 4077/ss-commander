@@ -132,34 +132,7 @@ class Xhr extends \Controller
                                 $sourceProduct = \ss\models\Product::find($item['id']);
 
                                 if ($sourceProduct) {
-//                                    $targetProduct = \ss\models\Product::where('source_id', $sourceProduct->id)->whereHas('cat', function ($query) use ($targetCat) {
-//                                        $query->where('tree_id', $targetCat->tree_id);
-//                                    })->first();
-
-                                    $targetProduct = \ss\models\Product::where('source_id', $sourceProduct->id)->where('tree_id', $targetCat->tree_id)->first();
-
-                                    if (!$targetProduct) {
-                                        $cloneData = $sourceProduct->toArray();
-
-                                        ra($cloneData, [
-                                            'source_id'       => $sourceProduct->id,
-                                            'tree_id'         => $targetCat->tree_id,
-                                            'status'          => 'initial',
-                                            'status_datetime' => \Carbon\Carbon::now()->toDateTimeString(),
-                                            'published'       => false
-                                        ]);
-
-                                        $newProduct = $targetCat->products()->create($cloneData);
-
-                                        $this->c('\std\images~:copy', [
-                                            'source' => $sourceProduct,
-                                            'target' => $newProduct
-                                        ]);
-
-//                                        if (!isset($updatedCats[$importProduct->cat_id])) {
-//                                            $updatedCats[$importProduct->cat_id] = $importProduct->cat;
-//                                        }
-                                    }
+                                    ss()->products->install($sourceProduct, $targetCat);
                                 }
                             }
                         }
