@@ -1,6 +1,6 @@
 // head {
-var __nodeId__ = "ss_commander2_ui_panel__main_bottomBar_createPanel_treeSelector";
-var __nodeNs__ = "ss_commander2_ui_panel";
+var __nodeId__ = "ss_commander_ui_panel__main_bottomBar_createPanel_treeSelector";
+var __nodeNs__ = "ss_commander_ui_panel";
 // }
 
 (function (__nodeNs__, __nodeId__) {

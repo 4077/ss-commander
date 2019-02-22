@@ -249,7 +249,8 @@ var __nodeNs__ = "ss_commander_ui_panel";
                 // if (o.catId === data.id) {
                 //     w.mr('reload');
                 // }
-            });
+
+});
 
             w.e('ss/page/update.' + o.panelName, function (data) { // todo page>folder
                 var $folder = $(".folder[row_id='" + data.id + "']", $w);

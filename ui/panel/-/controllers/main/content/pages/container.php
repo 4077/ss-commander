@@ -109,7 +109,7 @@ class Container extends \Controller
 
             $imagesCount = count($product->images);
 
-            list($price, $stock, $reserved) = ss()->products->explodeMultisourceCache($product, $divisionId, $warehouseId);
+            list($price, $discount, $stock, $reserved) = ss()->products->explodeMultisourceCache($product, $divisionId, $warehouseId);
 
             $v->assign('product', [
                 'ID'                  => $product->id,
@@ -119,6 +119,7 @@ class Container extends \Controller
                 'NOT_PUBLISHED_CLASS' => $product->published ? '' : 'not_published',
                 'STOCK'               => $stock,
                 'PRICE'               => $price,
+                'DISCOUNT'            => $discount,
                 'STATUS_TITLE'        => $statuses[$product->status]['title'] . ' (' . \Carbon\Carbon::parse($product->status_datetime)->format('d.m.Y H:i:s') . ')',
                 'ICON_CLASS'          => $statuses[$product->status]['icon'],
                 'STATUS_CLASS'        => $product->status,

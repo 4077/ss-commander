@@ -123,7 +123,7 @@ class Folders extends \Controller
             $installed = count($product->refs);
             $imagesCount = count($product->images);
 
-            list($price, $stock, $reserved) = ss()->products->explodeMultisourceCache($product, $divisionId, $warehouseId);
+            list($price, $discount, $stock, $reserved) = ss()->products->explodeMultisourceCache($product, $divisionId, $warehouseId);
 
             $v->assign('product', [
                 'ID'                  => $product->id,
@@ -135,6 +135,7 @@ class Folders extends \Controller
                 'NAME'                => $product->name,
                 'STOCK'               => $stock,
                 'PRICE'               => $price,
+                'DISCOUNT'            => $discount,
                 'HAS_IMAGES_CLASS'    => $imagesCount ? 'has' : '',
                 'IMAGES_COUNT'        => $imagesCount,
                 'TITLE'               => 'id=' . $product->id . ' folder_id=' . $cat->id . ' tree_id=' . $product->tree_id . ' source_id=' . $product->source_id . ' position=' . $product->position // tmp

@@ -35,6 +35,7 @@
             <td class="name"><span class="value">{NAME}</span><span class="locked_icon fa fa-lock"></span></td>
             <td class="stock" width="1">{STOCK}</td>
             <td class="price" width="1">{PRICE}</td>
+            <td class="discount" width="1">{DISCOUNT}</td>
         </tr>
         <!-- / -->
     </table>
