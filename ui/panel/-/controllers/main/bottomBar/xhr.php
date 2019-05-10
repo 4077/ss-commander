@@ -371,6 +371,6 @@ class Xhr extends \Controller
 
         $value = $this->s($sPath, !$this->s($sPath), RR);
 
-        $this->app->response->sendJson(['pinned' => $value]);
+        $this->app->response->json(['pinned' => $value]);
     }
 }

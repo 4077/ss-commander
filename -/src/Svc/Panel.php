@@ -97,8 +97,8 @@ class Panel
     {
         if (null === $this->tree) {
             if (!$this->sMain['tree_id']) {
-                if ($firstTree = \ss\models\TreesConnection::where('instance', '')->first()) {
-                    $this->sMain['tree_id'] = $firstTree->source_id;
+                if ($firstTree = \ss\models\Tree::query()->first()) {
+                    $this->sMain['tree_id'] = $firstTree->id;
                 }
             }
 
